@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 34px;
+    /* background-image: url("https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80"); */
+    /* background-size: cover; */
+    background-image: linear-gradient(orange, blueviolet);
+}
+
+#pageTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+
+}
+
+#survey-form {
+    min-height: 612px;
+    width: 55%;
+    background-color: rgba(84, 20, 105, 0.8);
+    padding: 34px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 34px;
+    color: white;
+}
+
+.group-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#radio-options {
+    display: flex;
+    flex-direction: column;
+}
+
+#checkbox-options {
+    display: flex;
+    flex-direction: column;
+}
+
+#name-label,
+#email-label,
+#number-label,
+#dropdown-label,
+#radio-label,
+#checkbox-label,
+#textarea-label {
+    font-weight: 600;
+}
+
+#name,
+#email,
+#number {
+    height: 2rem;
+    border-radius: 0.3rem;
+    border: 2px solid orange;
+    outline: 0;
+}
+
+
+#dropdown {
+    height: 2rem;
+    border-radius: 0.3rem;
+    border: 2px solid orange;
+    outline: 0;
+}
+
+input {
+	accent-color: orange;
+}
+
+textarea {
+    border-radius: 0.3rem;
+    border: 2px solid orange;
+    outline: 0;
+}
+
+button {
+    height: 3rem;
+    background-color: transparent;
+    border-radius: 1.3rem;
+    color: orange;
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+button:hover {
+    background-color: white;
+}

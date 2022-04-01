@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <title>Survey form</title>
+</head>
+
+<body>
+    <div id="pageTitle">
+        <h1 id="title">Survey forum
+        </h1>
+        <p id="description"> Thank you for taking the time to help us improve the platform </p>
+    </div>
+    <form id="survey-form" action="">
+        <div class="group-form">
+            <label for="name" id="name-label">Name</label>
+            <input id="name" type="text" placeholder="Enter your name">
+        </div>
+        <div class="group-form">
+            <label for="email" id="email-label">Email</label>
+            <input id="email" type="email" placeholder="Enter your email">
+        </div>
+        <div class="group-form">
+            <label for="number" id="number-label">Age</label>
+            <input id="number" type="number" min="12" max="120" placeholder="Age">
+        </div>
+        <div class="group-form">
+            <label id="dropdown-label" for="dropdown">Which option best describes your current role?</label>
+            <select id="dropdown">
+                <option>student</option>
+                <option>intren</option>
+                <option>employee</option>
+                <option>freelancer</option>
+            </select>
+        </div>
+        <div class="group-form">
+            <p id="radio-label">You are (or working towards becoming)?</p>
+            <div id="radio-options">
+                <div>
+                    <input type="radio" name="workType" id="frontend">
+                    <label for="frontend">Frontend developper</label>
+                </div>
+                <div>
+                    <input type="radio" name="workType" id="backend">
+                    <label for="backend">Backend developper</label>
+                </div>
+                <div>
+                    <input type="radio" name="workType" id="full-stack">
+                    <label for="full-stack">Full Stack developper</label>
+                </div>
+            </div>
+        </div>
+        <div class="group-form">
+            <p id="checkbox-label">What are the technologies you work with ?</p>
+            <div id="checkbox-options">
+                <div>
+                    <input type="checkbox" name="technologies" id="frontend">
+                    <label for="frontend">ReactJS</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="technologies" id="backend">
+                    <label for="backend">AngularJs</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="technologies" id="full-stack">
+                    <label for="full-stack">Vuejs</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="technologies" id="full-stack">
+                    <label for="full-stack">Python</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="technologies" id="full-stack">
+                    <label for="full-stack">PHP</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="technologies" id="full-stack">
+                    <label for="full-stack">JAVA</label>
+                </div>
+            </div>
+        </div>
+        <div class="group-form">
+            <label id="textarea-label" for="infomations">More informatins you might like to add?</label>
+            <textarea placeholder="Enter your informations here" id="infomations" rows="8" cols="50"></textarea>
+        </div>
+        <button type="submit" id="submitButton">submit</button>
+    </form>
+
+    <script src="/behaviour.js"></script>
+</body>
+
+</html>

@@ -26,7 +26,7 @@ submitForm.addEventListener("click", function (event) {
             message.style.fontSize = "0.8rem";
             message.style.fontWeight = 200;
             message.style.borderRadius = "0.5rem";
-            message.style.padding ="0.3rem";
+            message.style.padding = "0.3rem";
             message.innerText = "You must provide a name"
             nameLable.appendChild(message);
         }
@@ -38,7 +38,7 @@ submitForm.addEventListener("click", function (event) {
             message.style.fontSize = "0.8rem";
             message.style.fontWeight = 200;
             message.style.borderRadius = "0.5rem";
-            message.style.padding ="0.3rem";
+            message.style.padding = "0.3rem";
             message.innerText = "You must provide an email"
             nameLable.appendChild(message);
         }
@@ -50,9 +50,10 @@ submitForm.addEventListener("click", function (event) {
             message.style.fontSize = "0.8rem";
             message.style.fontWeight = 200;
             message.style.borderRadius = "0.5rem";
-            message.style.padding ="0.3rem";
+            message.style.padding = "0.3rem";
             message.innerText = "You must select atleast one technology"
             nameLable.appendChild(message);
+            return false;
         }
     }
 
@@ -68,6 +69,16 @@ submitForm.addEventListener("click", function (event) {
     notEmpty();
 
     // dispalying the data.
+    displayData();
+
+    function displayData() {
+
+        const participantData = document.getElementById("participantData");
+        const paragraph = document.createElement("p");
+        paragraph.innerText = `Hello ${participantName} with the email ${participantEmail}
+        you are ${participantOccupation} working as ${participantStack} with these technologies ${participantTechnologies}` 
+        participantData.appendChild(paragraph);
+    }
 
 
 

@@ -15,7 +15,7 @@
         </h1>
         <p id="description"> Thank you for taking the time to help us improve the platform </p>
     </div>
-    <form id="survey-form" action="">
+    <form id="survey-form">
         <div class="group-form">
             <label for="name" id="name-label">Name</label>
             <input id="name" type="text" placeholder="Enter your name">
@@ -31,25 +31,26 @@
         <div class="group-form">
             <label id="dropdown-label" for="dropdown">Which option best describes your current role?</label>
             <select id="dropdown">
-                <option>student</option>
-                <option>intren</option>
-                <option>employee</option>
-                <option>freelancer</option>
+                <option value="student" selected>student</option>
+                <option value="intern">intren</option>
+                <option value="employee">employee</option>
+                <option value="freelancer">freelancer</option>
             </select>
         </div>
+
         <div class="group-form">
             <p id="radio-label">You are (or working towards becoming)?</p>
             <div id="radio-options">
                 <div>
-                    <input type="radio" name="workType" id="frontend">
+                    <input type="radio" name="stack" id="frontend" value="Frontend developper" checked="checked">
                     <label for="frontend">Frontend developper</label>
                 </div>
                 <div>
-                    <input type="radio" name="workType" id="backend">
+                    <input type="radio" name="stack" id="backend" value="Backend developper">
                     <label for="backend">Backend developper</label>
                 </div>
                 <div>
-                    <input type="radio" name="workType" id="full-stack">
+                    <input type="radio" name="stack" id="full-stack" value="Full stack developper">
                     <label for="full-stack">Full Stack developper</label>
                 </div>
             </div>
@@ -58,28 +59,28 @@
             <p id="checkbox-label">What are the technologies you work with ?</p>
             <div id="checkbox-options">
                 <div>
-                    <input type="checkbox" name="technologies" id="frontend">
-                    <label for="frontend">ReactJS</label>
+                    <input type="checkbox" name="technologies[]" id="reactjs" value="ReactJs">
+                    <label for="reactjs">ReactJS</label>
                 </div>
                 <div>
-                    <input type="checkbox" name="technologies" id="backend">
-                    <label for="backend">AngularJs</label>
+                    <input type="checkbox" name="technologies[]" id="angular" value="AngularJs">
+                    <label for="angular">AngularJs</label>
                 </div>
                 <div>
-                    <input type="checkbox" name="technologies" id="full-stack">
-                    <label for="full-stack">Vuejs</label>
+                    <input type="checkbox" name="technologies[]" id="vue" value="VueJs">
+                    <label for="vue">VueJs</label>
                 </div>
                 <div>
-                    <input type="checkbox" name="technologies" id="full-stack">
-                    <label for="full-stack">Python</label>
+                    <input type="checkbox" name="technologies[]" id="python" value="Python">
+                    <label for="python">Python</label>
                 </div>
                 <div>
-                    <input type="checkbox" name="technologies" id="full-stack">
-                    <label for="full-stack">PHP</label>
+                    <input type="checkbox" name="technologies[]" id="php"value="PHP">
+                    <label for="php">PHP</label>
                 </div>
                 <div>
-                    <input type="checkbox" name="technologies" id="full-stack">
-                    <label for="full-stack">JAVA</label>
+                    <input type="checkbox" name="technologies[]" id="java" value="JAVA">
+                    <label for="java">JAVA</label>
                 </div>
             </div>
         </div>
@@ -90,7 +91,8 @@
         <button type="submit" id="submitButton">submit</button>
     </form>
 
-    <script src="/behaviour.js"></script>
+
+    <script src="/script.js"></script>
 </body>
 
 </html>

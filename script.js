@@ -6,9 +6,9 @@ var occupationInputs = document.getElementById('dropdown');
 const front = document.getElementById("frontend");
 const back = document.getElementById("backend");
 const full = document.getElementById("full-stack");
-const technologies = document.querySelectorAll('[type="checkbox"]:checked');
-
-
+var participantStack;
+var checkBoxes = document.getElementsByName('technologies[]');
+var participantTechnologies = [];
 const textAreaInput = document.getElementById("infomations");
 
 
@@ -18,16 +18,63 @@ submitForm.addEventListener("click", function (event) {
     event.preventDefault();
 
     // form validation
+    function notEmpty() {
+        if (nameInput.value === "") {
+            const nameLable = document.getElementById('name-label');
+            const message = document.createElement("p");
+            message.style.backgroundColor = "orange";
+            message.style.fontSize = "0.8rem";
+            message.style.fontWeight = 200;
+            message.style.borderRadius = "0.5rem";
+            message.style.padding ="0.3rem";
+            message.innerText = "You must provide a name"
+            nameLable.appendChild(message);
+        }
+
+        if (emailInput.value === "") {
+            const nameLable = document.getElementById('email-label');
+            const message = document.createElement("p");
+            message.style.backgroundColor = "orange";
+            message.style.fontSize = "0.8rem";
+            message.style.fontWeight = 200;
+            message.style.borderRadius = "0.5rem";
+            message.style.padding ="0.3rem";
+            message.innerText = "You must provide an email"
+            nameLable.appendChild(message);
+        }
+
+        if (participantTechnologies.length == 0) {
+            const nameLable = document.getElementById('checkbox-label');
+            const message = document.createElement("p");
+            message.style.backgroundColor = "orange";
+            message.style.fontSize = "0.8rem";
+            message.style.fontWeight = 200;
+            message.style.borderRadius = "0.5rem";
+            message.style.padding ="0.3rem";
+            message.innerText = "You must select atleast one technology"
+            nameLable.appendChild(message);
+        }
+    }
+
 
     // getting the paticipant data
     const participantName = nameInput.value;
     const participantEmail = emailInput.value;
     const participantAge = ageInput.value;
     let participantOccupation = occupationInputs.options[occupationInputs.selectedIndex].value;
-    let participantStack;
-
     const extraInformations = textAreaInput.value;
+    gettingtheStack()
+    gettingTheTechnologies();
+    notEmpty();
 
+    // dispalying the data.
+
+
+
+
+});
+
+function gettingtheStack() {
     if (front.checked == true) {
         participantStack = front.value;
     };
@@ -37,35 +84,15 @@ submitForm.addEventListener("click", function (event) {
     if (full.checked == true) {
         participantStack = full.value;
     };
+};
 
-    var participantTechnologies = [];
-    function gettingTheTechnologies() {
-        var cboxes = document.getElementsByName('technologies[]');
-        var len = cboxes.length;
-        for (var i = 0; i < len; i++) {
-            if (cboxes[i].checked == true) {
-                participantTechnologies.push(cboxes[i].value);
-            }
-            else {
-            }
+function gettingTheTechnologies() {
+    var length = checkBoxes.length;
+    for (var i = 0; i < length; i++) {
+        if (checkBoxes[i].checked == true) {
+            participantTechnologies.push(checkBoxes[i].value);
+        }
+        else {
         }
     }
-
-    gettingTheTechnologies();
-
-    console.log(participantName);
-    console.log(participantEmail);
-    console.log(participantAge);
-    console.log(participantOccupation);
-    console.log(participantStack);
-    console.log(participantTechnologies);
-    console.log(extraInformations);
-
-    // dispalying the data.
-
-
-
-
-
-
-});
+}

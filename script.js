@@ -16,6 +16,7 @@ const textAreaInput = document.getElementById("infomations");
 
 submitForm.addEventListener("click", function (event) {
     event.preventDefault();
+    var run = true;
 
     // form validation
     function notEmpty() {
@@ -29,6 +30,8 @@ submitForm.addEventListener("click", function (event) {
             message.style.padding = "0.3rem";
             message.innerText = "You must provide a name"
             nameLable.appendChild(message);
+            run = false;
+
         }
 
         if (emailInput.value === "") {
@@ -41,6 +44,7 @@ submitForm.addEventListener("click", function (event) {
             message.style.padding = "0.3rem";
             message.innerText = "You must provide an email"
             nameLable.appendChild(message);
+            run = false;
         }
 
         if (participantTechnologies.length == 0) {
@@ -53,7 +57,7 @@ submitForm.addEventListener("click", function (event) {
             message.style.padding = "0.3rem";
             message.innerText = "You must select atleast one technology"
             nameLable.appendChild(message);
-            return false;
+            run = false;
         }
     }
 
@@ -69,12 +73,14 @@ submitForm.addEventListener("click", function (event) {
     notEmpty();
 
     // dispalying the data.
+    if (run == true){
     displayData();
+}
 
     function displayData() {
 
         const participantData = document.getElementById("participantData");
-        const paragraph = document.createElement("p");
+        const paragraph = document.createElement("h3");
         paragraph.innerText = `Hello ${participantName} with the email ${participantEmail}
         you are ${participantOccupation} working as ${participantStack} with these technologies ${participantTechnologies}` 
         participantData.appendChild(paragraph);
